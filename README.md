@@ -4,25 +4,24 @@
 
 - **Mapping Message Flows:**
   - Map all message flows of the contract to understand how messages are processed and routed.
-- **Key Questions:**
-  - **Partial Execution of Transactions:**
-    - What happens if a transaction is **partially executed** due to gas exhaustion?
-    - How does the contract handle partial execution?
-  - **Entry Points:**
-    - Identify all **entry points** of the contract.
-  - **Input Data Processing:**
-    - How are **input data** and incoming messages processed?
-    - Are incoming errors appropriately handled?
-  - **Authorization Checks:**
-    - Are there **authorization checks** for all functions and message handlers?
-  - **Contract Design and Centralization:**
-    - Examine the contract structure for any unnecessary **centralization**.
-  - **External Message Handling:**
-    - How does the contract handle **external messages**?
-    - Ensure that `accept_message()` is used **only after** proper validations to prevent gas draining attacks.
-    - Verify the implementation of `recv_external`.
-  - **Preventing Freezing and Deletion:**
-    - What mechanisms are in place to prevent the contract from being **frozen** or **deleted**?
+- **Partial Execution of Transactions:**
+  - What happens if a transaction is **partially executed** due to gas exhaustion?
+  - How does the contract handle partial execution?
+- **Entry Points:**
+  - Identify all **entry points** of the contract.
+- **Input Data Processing:**
+  - How are **input data** and incoming messages processed?
+  - Are incoming errors appropriately handled?
+- **Authorization Checks:**
+  - Are there **authorization checks** for all functions and message handlers?
+- **Contract Design and Centralization:**
+  - Examine the contract structure for any unnecessary **centralization**.
+- **External Message Handling:**
+  - How does the contract handle **external messages**?
+  - Ensure that `accept_message()` is used **only after** proper validations to prevent gas draining attacks.
+  - Verify the implementation of `recv_external`.
+- **Preventing Freezing and Deletion:**
+  - What mechanisms are in place to prevent the contract from being **frozen** or **deleted**?
 
 ## Asynchronous Execution
 
