@@ -1,6 +1,6 @@
 # Checklist for Auditing TON Smart Contracts
 
-## General
+## Contract Design
 
 - **Mapping Message Flows:**
   - Map all message flows of the contract to understand how messages are processed and routed.
@@ -17,19 +17,12 @@
     - Are there **authorization checks** for all functions and message handlers?
   - **Contract Design and Centralization:**
     - Examine the contract structure for any unnecessary **centralization**.
-  - **External Message Handling:**
-    - How does the contract handle **external messages**?
-    - Ensure that `accept_message()` is used **only after** proper validations to prevent gas draining attacks.
-    - Verify the implementation of `recv_external`.
-  - **Preventing Freezing and Deletion:**
-    - What mechanisms are in place to prevent the contract from being **frozen** or **deleted**?
 
 ## Asynchronous Execution
 
 - **Understanding Asynchrony:**
-  - **Message Delivery Guarantees:**
+  - **Message Delivery Guarantees and Order Uncertainty:**
     - Messages are guaranteed to be delivered but not in a predictable timeframe.
-  - **Message Order Uncertainty:**
     - The order of messages can only be predicted if messages are sent to the same contract, in which case [logical time](https://docs.ton.org/develop/smart-contracts/guidelines/message-delivery-guarantees#what-is-a-logical-time) is used.
       - If multiple messages are sent to different contracts, the order in which they are received is not guaranteed.
 - **Key Considerations:**
@@ -43,7 +36,7 @@
   - **Operation Independence:**
     - Ensure that operations are independent of the sequence of message arrivals.
 
-## Common errors in TON
+## Common Vulnerabilities
 
 ### What to look out for
 
@@ -85,8 +78,6 @@
   - **Delayed code updates:**
     - Realize that code updates do not affect the current transaction:
       - Changes take effect **only after** the current execution has successfully completed.
-  - **Decentralization Issues:**
-    - Evaluate how updates may affect the decentralization of the contract.
 - **Use of signed and unsigned numbers:**
   - If `int x` is sent in a message and `x` is added to `uint y` in the code, it is possible for the expression `x + y` to become `x - y`
 - **Exit codes:**
@@ -183,7 +174,7 @@
   - If a developer creates an optional variable or field, they should use its functionality by referring to a null value somewhere in the code.
   - Otherwise, the optional type should be removed to simplify and optimize the code.
 
-## Additional Recommendations
+## Best Practices
 
 - **Magic numbers, flags, and constants:**
   - Replace magic numbers with named constants for clarity and ease of maintenance.
