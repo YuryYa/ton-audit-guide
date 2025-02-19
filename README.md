@@ -182,7 +182,7 @@
   - If a developer creates an optional variable or field, they should use its functionality by referring to a null value somewhere in the code.
   - Otherwise, the optional type should be removed to simplify and optimize the code.
 
-## Additional Recommendations
+## Best Practices
 
 - **Magic numbers, flags, and constants:**
   - Replace magic numbers with named constants for clarity and ease of maintenance.
