@@ -1,5 +1,7 @@
 # Checklist for Auditing TON Smart Contracts
 
+**Note.** This checklist is a specialized version developed for the paper titled *"From Paradigm Shift to Audit Rift: Exploring Vulnerabilities and Audit Tips for TON Smart Contracts."* A summary table of vulnerabilities, along with detailed findings, is available in both [Markdown](https://github.com/YuryYa/ton-audit-guide/blob/main/Vulnerabilities%20from%20Reports.md) and [CSV](https://github.com/YuryYa/ton-audit-guide/blob/main/Vulnerabilities%20from%20Reports.csv) formats in this repository branch.
+
 ## General
 
 - **Mapping Message Flows:**
